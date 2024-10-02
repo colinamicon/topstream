@@ -9,16 +9,16 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: TopStream
-    template: '%s — TopStream'
-  description: "\U0001F680 The most affordable placement for ads on every plaform provider."
+    default: Top Stream
+    template: '%s — Top Stream'
+  description: "\U0001F680 The most affordable OTT ad placement for advertising on every plaform provider."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: TopStream
+    site_name: Top Stream
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/topstream-ott.png'
         width: 1200
         height: 628
     type: website

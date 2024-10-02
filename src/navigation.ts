@@ -58,7 +58,7 @@ export const headerData = {
   //     href: '#',
   //   },
   // ],
-  actions: [{ text: 'Pricing', href: '/pricing'}],
+  actions: [{ text: 'Contact', href: '/contact'}],
 };
 
 export const footerData = {

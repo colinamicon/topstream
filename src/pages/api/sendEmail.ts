@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 import type { APIRoute } from 'astro';
 
-const resendApiKey = import.meta.env.PUBLIC_RESEND_API_KEY;
+const resendApiKey = import.meta.env.RESEND_API_KEY;
 const resend = new Resend(resendApiKey);
 
 export const POST: APIRoute = async ({ request }) => {
@@ -16,10 +16,16 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     await resend.emails.send({
-      from: email, // Your verified sender email
+      from: 'admin@topstreammedia.com', // Your verified sender email
       to: '[info@topstreammedia.com]', // Recipient email
       subject: `Contact form submission from ${name}`,
+      replyTo: email,
       text: message,
+      headers: {
+        // Adding headers here
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${resendApiKey}`, // Use the API key
+      },
     });
 
     console.log(data);
@@ -29,18 +35,3 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response('Error sending email', { status: 500 });
   }
 };
-
-// export async function GET() {
-//     try {
-//         return new Response(JSON.stringify({ message: 'Send a POST request to this endpoint to send an email.' }), {
-//             status: 200,
-//             headers: { 'Content-Type': 'application/json' },
-//         });
-//     } catch (error) {
-//         console.error('Error handling GET request:', error);
-//         return new Response(JSON.stringify({ success: false, message: 'Failed to handle GET request.' }), {
-//             status: 500,
-//             headers: { 'Content-Type': 'application/json' },
-//         });
-//     }
-// }

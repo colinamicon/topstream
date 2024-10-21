@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 import type { APIRoute } from 'astro';
 
-const resendApiKey = import.meta.env.RESEND_API_KEY;
+const resendApiKey = import.meta.env.PUBLIC_RESEND_API_KEY;
 const resend = new Resend(resendApiKey);
 
 export const POST: APIRoute = async ({ request }) => {
@@ -16,8 +16,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     await resend.emails.send({
-      from: 'admin@topstreammedia.com', // Your verified sender email
-      to: '[info@topstreammedia.com]', // Recipient email
+      from: 'tim@topstreammedia.com', // Your verified sender email
+      to: '[tim@topstreammedia.com]', // Recipient email
       subject: `Contact form submission from ${name}`,
       replyTo: email,
       text: message,

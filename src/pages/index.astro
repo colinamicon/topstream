@@ -7,6 +7,7 @@ import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+// import FeedbackForm from '~/components/FeedbackForm';
 
 const metadata = {
   title: 'Top Stream - Revolutionizing OTT Online Streaming',
@@ -16,12 +17,13 @@ const metadata = {
 };
 ---
 
+<!-- <FeedbackForm client:load />  -->
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
   <Hero
     actions={[
-      { text: 'Read more', href: '#blog', class: 'mx-2', icon: 'tabler:list' },
+      { text: 'Read more', href: '/blog', class: 'mx-2', icon: 'tabler:list' },
       {
         variant: 'primary',
         text: 'Get Demo',

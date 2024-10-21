@@ -15,14 +15,6 @@ export const headerData = {
         },
       ],
     },
-    {
-      text: 'Locations',
-      href: '#',
-    },
-    {
-      text: 'Support',
-      href: '#',
-    },
   ],
   actions: [{ text: 'Contact', href: '/contact'}],
 };

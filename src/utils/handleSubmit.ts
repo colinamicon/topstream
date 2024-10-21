@@ -1,20 +1,20 @@
 // handleSubmit.js
+
 export default async function handleSubmit(event) {
     event.preventDefault(); // Prevent the default form submission
 
     const formData = new FormData(event.target); // Get the form data
-
-    // Extract values from the form data
     const name = formData.get('name');
     const email = formData.get('email');
     const message = formData.get('message');
 
-    // Example: Log the values to the console
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Message:', message);
+    // Validate form data
+    if (!name || !email || !message) {
+        showToast('All fields are required.', 'error');
+        return;
+    }
 
-    // Here you can add logic to send this data to your server or API
+    // Send the data to the server
     try {
         const response = await fetch('/api/sendEmail', {
             method: 'POST',
@@ -24,27 +24,27 @@ export default async function handleSubmit(event) {
             },
         });
 
-        if (response.ok) {
-            console.log('Email sent successfully!');
-            showToast('Email sent successfully!', 'success'); // Show success toast
+        // Check if the response is OK
+        if (response.status == 200) {
+            showToast('Email sent successfully!', 'success');
             window.location.href = '/email-sent'; // Redirect to the email-sent page
         } else {
-            console.error('Error sending email:', response.statusText);
-            showToast('Error sending email. Please try again.', 'error'); // Show error toast
+            const errorData = await response.json(); // Parse the JSON response
+            showToast(`Error sending email: ${errorData}`, 'error'); // Use the error message
         }
     } catch (error) {
         console.error('Error:', error);
-        showToast('An unexpected error occurred. Please try again.', 'error'); // Show error toast
+        showToast('An unexpected error occurred. Please try again.', 'error');
     }
 }
 
-// Function to show toast messages
 function showToast(message, type) {
+    // Create a toast element
     const toast = document.createElement('div');
     toast.className = `toast ${type}`; // Add a class based on the type (success/error)
     toast.innerText = message;
 
-    // Style the toast (you can customize this)
+    // Style the toast
     toast.style.position = 'fixed';
     toast.style.bottom = '20px';
     toast.style.right = '20px';
@@ -54,17 +54,17 @@ function showToast(message, type) {
     toast.style.zIndex = '1000';
     toast.style.transition = 'opacity 0.5s ease-in-out';
     toast.style.opacity = '1';
+    toast.style.backgroundColor = type === 'success' ? 'green' : 'red'; // Set background color based on type
 
-    // Set background color based on type
-    toast.style.backgroundColor = type === 'success' ? 'green' : 'red';
-
+    // Append the toast to the body
     document.body.appendChild(toast);
 
     // Fade out and remove the toast after 3 seconds
     setTimeout(() => {
-        toast.style.opacity = '0';
+        toast.style.opacity = '0'; // Start fade out
         setTimeout(() => {
-            document.body.removeChild(toast);
+            document.body.removeChild(toast); // Remove from DOM after fade out
         }, 500); // Wait for fade out to complete before removing
-    }, 3000);
+    }, 3000); // Duration before fading out
 }
+

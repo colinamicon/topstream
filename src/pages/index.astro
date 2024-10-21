@@ -21,28 +21,24 @@ const metadata = {
 
   <Hero
     actions={[
+      { text: 'Read more', href: '#blog', class: 'mx-2', icon: 'tabler:list' },
       {
         variant: 'primary',
         text: 'Get Demo',
         href: '/contact',
-        icon: 'tabler:list',
+        icon: 'tabler:rocket',
         class: 'mx-2 text-left',
       },
-      // { text: 'Learn more', href: '#features', class: 'mx-2' },
     ]}
     image={{ src: '~/assets/images/topstream-tv.png', alt: 'Top Stream Hero Image' }}
   >
-    <Fragment slot="title">🛜 TOP STREAM</Fragment>
+    <Fragment slot="title">TOP STREAM</Fragment>
 
     <Fragment slot="subtitle" class="flex flex-col items-center">
       <span class="font-semibold flex justify-center items-center mb-1">Best Price, Maximum ROI</span>
       Top Stream buys CTV / OTT streaming media impressions at the same price as our competitors, but with <b
         >significantly less</b
       > overhead and <b>smaller margins</b>, we pass those savings on to you.
-      <span class="hidden sm:inline">
-        <span class="font-semibold">Top Stream</span> delivers high-performing ad campaigns that connect with your target
-        audience at the right price.
-      </span>
     </Fragment>
   </Hero>
 

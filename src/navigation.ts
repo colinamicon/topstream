@@ -1,63 +1,29 @@
-// import { getPermalink, getAsset } from './utils/permalinks';
+import { getBlogPermalink, getPermalink } from './utils/permalinks';
 
 export const headerData = {
-  // links: [
-  //   // deleted homes
-  //   {
-  //     text: 'Pages',
-  //     links: [
-  //       {
-  //         text: 'Services',
-  //         href: getPermalink('/services'),
-  //       },
-  //       {
-  //         text: 'Pricing',
-  //         href: getPermalink('/pricing'),
-  //       },
-  //       {
-  //         text: 'About us',
-  //         href: getPermalink('/about'),
-  //       },
-  //       {
-  //         text: 'Contact',
-  //         href: getPermalink('/contact'),
-  //       },
-  //       // {
-  //       //   text: 'Terms',
-  //       //   href: getPermalink('/terms'),
-  //       // },
-  //       // {
-  //       //   text: 'Privacy policy',
-  //       //   href: getPermalink('/privacy'),
-  //       // },
-  //     ],
-  //   },
-  //   {
-  //     text: 'Blog',
-  //     links: [
-  //       {
-  //         text: 'Blog List',
-  //         href: getBlogPermalink(),
-  //       },
-  //       // {
-  //       //   text: 'Article',
-  //       //   href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-  //       // },
-  //       // {
-  //       //   text: 'Article (with MDX)',
-  //       //   href: getPermalink('markdown-elements-demo-post', 'post'),
-  //       // },
-  //     ],
-  //   },
-  //   {
-  //     text: 'Locations',
-  //     href: '#',
-  //   },
-  //   {
-  //     text: 'Support',
-  //     href: '#',
-  //   },
-  // ],
+  links: [
+    {
+      text: 'Blog',
+      links: [
+        {
+          text: 'Blog List',
+          href: getBlogPermalink(),
+        },
+        {
+          text: 'OTT & CTV',
+          href: getPermalink('over-the-topstream', 'post'),
+        },
+      ],
+    },
+    {
+      text: 'Locations',
+      href: '#',
+    },
+    {
+      text: 'Support',
+      href: '#',
+    },
+  ],
   actions: [{ text: 'Contact', href: '/contact'}],
 };
 

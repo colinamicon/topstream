@@ -18,8 +18,8 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     // Send email using Resend API
     const { data, error } = await resend.emails.send({
-      from: 'tim@topstreammedia.com',
-      to: ['tim@topstreammedia.com'], // Ensure the 'to' field is an array
+      from: 'info@topstreammedia.com',
+      to: ['info@topstreammedia.com'], // Ensure the 'to' field is an array
       subject: `Contact form submission from ${name}`,
       replyTo: [email], // Correctly use 'replyTo'
       html: `<strong>${message}</strong>`, // Use HTML content

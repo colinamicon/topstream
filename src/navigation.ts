@@ -10,7 +10,7 @@ export const headerData = {
           href: getBlogPermalink(),
         },
         {
-          text: 'OTT & CTV',
+          text: 'OTT / CTV',
           href: getPermalink('over-the-topstream', 'post'),
         },
       ],

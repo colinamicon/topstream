@@ -1,0 +1,15 @@
+---
+import LoginForm from '~/components/LoginForm';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="Login" title="Welcome!" />
+
+  <LoginForm client:load />
+</Layout>

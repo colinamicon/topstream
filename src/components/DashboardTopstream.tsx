@@ -1,15 +1,4 @@
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-} from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 const data = [
   { name: 'Page A', value: 400 },
@@ -47,15 +36,7 @@ export default function DashboardTopstream() {
           <h2 className="text-xl font-medium mb-4">Pie Chart Example</h2>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
-              <Pie
-                data={pieData}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                outerRadius={80}
-                fill="#4F46E5"
-                dataKey="value"
-              >
+              <Pie data={pieData} cx="50%" cy="50%" labelLine={false} outerRadius={80} fill="#4F46E5" dataKey="value">
                 {pieData.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={index === 0 ? '#4F46E5' : '#3B82F6'} />
                 ))}
@@ -72,4 +53,4 @@ export default function DashboardTopstream() {
       </div>
     </div>
   );
-};
+}

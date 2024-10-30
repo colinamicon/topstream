@@ -18,7 +18,7 @@ export default function LoginForm() {
     if (response.ok) {
       const result = await response.json();
       console.log(result.message);
-      window.location.href = '/dashboard'
+      window.location.href = '/dashboard';
     } else {
       const error = await response.json();
       alert(error.error); // Display error message
@@ -64,7 +64,11 @@ export default function LoginForm() {
       </div>
 
       <div className="mt-10 grid">
-        <button type="submit" disabled={loading} className="py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400">
+        <button
+          type="submit"
+          disabled={loading}
+          className="py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
+        >
           {loading ? 'Logging in...' : 'Login'}
         </button>
       </div>

@@ -2,6 +2,7 @@ import { getBlogPermalink, getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
+    { text: 'Login', href: '/login' },
     {
       text: 'Blog',
       links: [
@@ -24,6 +25,7 @@ export const footerData = {
     {
       title: 'Top Stream Media',
       links: [
+        { text: 'Login', href: '/login' },
         { text: 'Contact', href: '/contact' },
         { text: 'Blog', href: '/blog' },
         // { text: 'Team', href: '#' },

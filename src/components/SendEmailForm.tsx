@@ -21,7 +21,9 @@ export default function SendEmailForm() {
   return (
     <form onSubmit={submit} className="max-w-md mx-auto p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md">
       <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Contact Us</h2>
-      <p className="text-sm text-gray-600 mb-4 dark:text-gray-300">We value your feedback and will get back to you shortly.</p>
+      <p className="text-sm text-gray-600 mb-4 dark:text-gray-300">
+        We value your feedback and will get back to you shortly.
+      </p>
 
       <div className="mb-6">
         <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">
@@ -66,7 +68,10 @@ export default function SendEmailForm() {
       </div>
 
       <div className="mt-10 grid">
-        <button type="submit" className="py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400">
+        <button
+          type="submit"
+          className="py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
+        >
           Send
         </button>
       </div>

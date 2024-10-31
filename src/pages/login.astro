@@ -1,0 +1,28 @@
+---
+import LoginForm from '~/components/LoginForm';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="Login" title="Welcome!" />
+
+  <LoginForm client:load />
+
+  <CallToAction
+    title="Ready to boost your ads?"
+    subtitle="Contact us today!"
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Contact us',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout>

@@ -1,0 +1,15 @@
+---
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import DashboardTopstream from '~/components/DashboardTopstream';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="Top Stream" title="Dashboard" />
+
+  <DashboardTopstream client:load />
+</Layout>

@@ -97,7 +97,7 @@ export default function DashboardTopstream() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div className="bg-white dark:bg-slate-900 rounded-lg p-4 shadow">
           <h2 className="text-xl font-medium mb-4">Top Zip Codes by Impression</h2>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={400}>
             <BarChart data={zipCodesData}>
               <XAxis dataKey="zip" />
               <YAxis />

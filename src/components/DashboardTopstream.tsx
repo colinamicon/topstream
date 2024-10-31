@@ -49,7 +49,8 @@ const zipData = [
 export default function DashboardTopstream() {
   return (
     <div className="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md">
-      <h1 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Dashboard</h1>
+      <h1 className="text-4xl font-semibold mb-2 text-gray-900 dark:text-white">Dashboard</h1>
+      <h2 className="text-muted font-semibold mb-6 text-gray-900 dark:text-white">Overview of your advertising metrics</h2>
 
       {/* Impression Performance Boxes */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">

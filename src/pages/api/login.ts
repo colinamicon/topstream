@@ -4,8 +4,8 @@ import type { APIRoute } from 'astro';
 const mockUsers = [
   { email: 'cmamicon@gmail.com', password: '1234' },
   { email: 'tim@topstreammedia.com', password: '1234' },
-  { email: 'trenton', password: '1234' },
-  { email: 'kevin', password: '1234' },
+  { email: 'trenton@redoakholdingsllc.com', password: '1234' },
+  { email: 'kevin.m.blue@outlook.com', password: '1234' },
 ];
 
 export const POST: APIRoute = async ({ request }) => {

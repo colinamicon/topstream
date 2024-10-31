@@ -1,4 +1,17 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+  LineChart,
+  Line,
+} from 'recharts';
 
 const zipCodesData = [
   { zip: '32115', impressions: 13451 },
@@ -99,8 +112,16 @@ export default function DashboardTopstream() {
           <h2 className="text-xl font-medium mb-4">Demographic Gender:</h2>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
-              <Pie data={genderPieChartData} cx="50%" cy="50%" labelLine={false} outerRadius={80} fill="#4F46E5" dataKey="value">
-                {genderPieChartData.map((entry, index) => (
+              <Pie
+                data={genderPieChartData}
+                cx="50%"
+                cy="50%"
+                labelLine={false}
+                outerRadius={80}
+                fill="#4F46E5"
+                dataKey="value"
+              >
+                {genderPieChartData.map((_entry, index) => (
                   <Cell key={`cell-${index}`} fill={index === 0 ? '#4F46E5' : '#3B82F6'} />
                 ))}
                 <p>Hello</p>
@@ -143,7 +164,9 @@ export default function DashboardTopstream() {
             <thead className="bg-gray-50 dark:bg-slate-700">
               <tr>
                 <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-300">Zip Code</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-300">Impressions</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-300">
+                  Impressions
+                </th>
                 <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-300">CTR</th>
               </tr>
             </thead>
@@ -151,7 +174,9 @@ export default function DashboardTopstream() {
               {zipData.map((entry, index) => (
                 <tr key={index}>
                   <td className="px-4 py-2 text-sm text-gray-900 dark:text-white">{entry.zipCode}</td>
-                  <td className="px-4 py-2 text-sm text-gray-900 dark:text-white">{entry.impressions.toLocaleString()}</td>
+                  <td className="px-4 py-2 text-sm text-gray-900 dark:text-white">
+                    {entry.impressions.toLocaleString()}
+                  </td>
                   <td className="px-4 py-2 text-sm text-gray-900 dark:text-white">{entry.ctr}</td>
                 </tr>
               ))}

@@ -1,5 +1,4 @@
 ---
-import HeroText from '~/components/widgets/HeroText.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import DashboardTopstreamPowerBi from '~/components/DashboardTopstreamPowerBi';
 
@@ -9,7 +8,5 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <HeroText tagline="Top Stream" title="Dashboard" />
-
   <DashboardTopstreamPowerBi client:load />
 </Layout>

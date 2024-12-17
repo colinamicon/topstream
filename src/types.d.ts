@@ -219,6 +219,7 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   content?: string;
   actions?: string | CallToAction[];
   image?: string | unknown;
+  video?: string;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {
@@ -283,6 +284,11 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
   isReversed?: boolean;
   isAfterContent?: boolean;
   callToAction?: CallToAction;
+}
+
+export interface RotatingBannerProps {
+  images: Array<string | ImageMetadata>;
+  alt?: string;
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}

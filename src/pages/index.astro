@@ -7,7 +7,11 @@ import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import RotatingBanner from '~/components/widgets/RotatingBanner.astro';
 // import FeedbackForm from '~/components/FeedbackForm';
+
+const topstreamHeader = 'https://vimeo.com/1039778146/7b056158cd';
 
 const metadata = {
   title: 'Top Stream - Revolutionizing OTT Online Streaming',
@@ -15,6 +19,40 @@ const metadata = {
     'Experience the future of OTT streaming with Top Stream. Discover our innovative solutions for a seamless viewing experience.',
   ignoreTitleTemplate: true,
 };
+
+const bannerImages = [
+  renewalByAndersonLogo,
+  bathFitterLogo,
+  flaWindowDoorLogo,
+  kitchenSaverLogo,
+  neatlyLogo,
+  getMeJusticeLogo,
+  renewalByAndersonLogo,
+  bathFitterLogo,
+  flaWindowDoorLogo,
+  kitchenSaverLogo,
+  neatlyLogo,
+  getMeJusticeLogo,
+  renewalByAndersonLogo,
+  bathFitterLogo,
+  flaWindowDoorLogo,
+  kitchenSaverLogo,
+  neatlyLogo,
+  getMeJusticeLogo,
+  renewalByAndersonLogo,
+  bathFitterLogo,
+  flaWindowDoorLogo,
+  kitchenSaverLogo,
+  neatlyLogo,
+  getMeJusticeLogo,
+];
+
+import renewalByAndersonLogo from '~/assets/images/renewal-by-anderson.png';
+import bathFitterLogo from '~/assets/images/bf-logo-transparent.png';
+import flaWindowDoorLogo from '~/assets/images/fla-window-and-door.png';
+import getMeJusticeLogo from '~/assets/images/get-me-justice-logo-01.png';
+import kitchenSaverLogo from '~/assets/images/kitchen-saver-logo.png';
+import neatlyLogo from '~/assets/images/neatly-logo.png';
 ---
 
 <!-- <FeedbackForm client:load />  -->
@@ -22,6 +60,7 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
+    video={topstreamHeader}
     actions={[
       { text: 'Read more', href: '/blog', class: 'mx-2', icon: 'tabler:list' },
       {
@@ -32,7 +71,6 @@ const metadata = {
         class: 'mx-2 text-left',
       },
     ]}
-    image={{ src: '~/assets/images/topstream-tv.png', alt: 'Top Stream Hero Image' }}
   >
     <Fragment slot="title">TOP STREAM</Fragment>
 
@@ -43,6 +81,8 @@ const metadata = {
       > overhead and <b>smaller margins</b>, we pass those savings on to you.
     </Fragment>
   </Hero>
+
+  <RotatingBanner images={bannerImages} />
 
   <!-- Content Widget **************** -->
 
@@ -188,6 +228,127 @@ is <b>tracked to maximize conversion.</b>`,
         title: 'Why should I choose Top Stream?',
         description:
           'We will take the time, as your ROI is dependent on it. We strongly feel that a lower price for the exact same product is a compelling reason to try our services.',
+      },
+    ]}
+  />
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    title="OTT/CTV PACKAGES"
+    subtitle="Unmatched price guarantee"
+    prices={[
+      {
+        title: 'ALL SPORTS PACKAGE',
+        subtitle: 'NFL, College, NBA',
+        price: '30.00',
+        period: '/cpm',
+        items: [
+          {
+            description: 'IN-GAME PLACEMENT',
+          },
+          {
+            description: 'All major platforms and channels',
+          },
+          {
+            description: 'Geo Target Street Level and Up',
+          },
+          {
+            description: 'Cross Device Targeted',
+          },
+          {
+            description: 'Unlimited Behavioral Attributes',
+          },
+          {
+            description: 'Frequency Caps',
+          },
+          {
+            description: 'Website Tracking',
+          },
+          {
+            description: 'Detailed Reporting',
+          },
+        ],
+        callToAction: {
+          text: 'Get All Sports Now',
+          href: '/contact',
+        },
+      },
+      //
+      {
+        title: 'PLAYOFFS & SUPER BOWL',
+        subtitle: 'The Most Watched Content',
+        price: '40.00',
+        period: '/cpm',
+        items: [
+          {
+            description: 'IN-GAME PLACEMENT',
+          },
+          {
+            description: 'All major platforms and channels',
+          },
+          {
+            description: 'Geo Target Street Level and Up',
+          },
+          {
+            description: 'Cross Device Targeted',
+          },
+          {
+            description: 'Unlimited Behavioral Attributes',
+          },
+          {
+            description: 'Frequency Caps',
+          },
+          {
+            description: 'Website Tracking',
+          },
+          {
+            description: 'Detailed Reporting',
+          },
+        ],
+        callToAction: {
+          text: 'Secure Playoff Access',
+          href: '/contact',
+        },
+        ribbonTitle: 'popular',
+        hasRibbon: true,
+      },
+      //
+      {
+        title: 'PREMIUM PROGRAMMING',
+        subtitle: 'The Best OTT/CTV programs',
+        price: '27.50',
+        period: '/cpm',
+        items: [
+          {
+            description: 'IN-PROGRAM PLACEMENT',
+          },
+          {
+            description: 'All major platforms and channels',
+          },
+          {
+            description: 'Geo Target Street Level and Up',
+          },
+          {
+            description: 'Cross Device Targeted',
+          },
+          {
+            description: 'Unlimited Behavioral Attributes',
+          },
+          {
+            description: 'Frequency Caps',
+          },
+          {
+            description: 'Website Tracking',
+          },
+          {
+            description: 'Detailed Reporting',
+          },
+        ],
+        callToAction: {
+          text: 'Access Premium Programs',
+          href: '/contact',
+        },
       },
     ]}
   />

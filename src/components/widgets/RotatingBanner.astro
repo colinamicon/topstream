@@ -41,7 +41,7 @@ if (!Array.isArray(images) || images.length === 0) {
 <style>
   .scroll-container {
     display: flex;
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 60s linear infinite;
   }
 
   @keyframes scroll-left {
@@ -49,7 +49,7 @@ if (!Array.isArray(images) || images.length === 0) {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-100% / 0.25));
+      transform: translateX(calc(-100% / 0.5));
     }
   }
 

@@ -108,6 +108,7 @@ export interface Widget {
 export interface Headline {
   title?: string;
   subtitle?: string;
+  subtitleSecond?: string;
   tagline?: string;
   classes?: Record<string, string>;
 }
@@ -144,6 +145,7 @@ export interface Item {
 export interface Price {
   title?: string;
   subtitle?: string;
+  subtitleSecond?: string;
   description?: string;
   price?: number | string;
   period?: string;

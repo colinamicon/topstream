@@ -1,9 +1,12 @@
 ---
-import topstreamLogo from '~/assets/images/topstream-logo.png';
+import topstreamLogoLight from '~/assets/images/topstream-logo-blue-light-mode.png';
+import topstreamLogoDark from '~/assets/images/topstream-logo-white-dark-mode.png';
 ---
 
 <span
   class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
 >
-  <img src={topstreamLogo.src} alt="Topstream Logo" class="h-16 md:h-16" />
+  <img src={topstreamLogoLight.src} alt="Topstream Logo" class="h-16 md:h-16 block dark:hidden" />
+  <img src={topstreamLogoDark.src} alt="Topstream Logo" class="h-16 md:h-16 hidden dark:block" />
 </span>
+<!-- SunsetDrive!!07 -->
